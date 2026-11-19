@@ -260,15 +260,15 @@ const etapas = [...document.querySelectorAll('.etapa')];
 const markActive = n => {
   dots.forEach(a => a.classList.toggle('is-active', a.dataset.dot === n));
   if (n) { const e = etapas[+n - 1]; curEl.textContent = e.querySelector('.etapa__rn').textContent + ' · ' + dots[+n - 1].querySelector('.nm').textContent; }
-  else curEl.textContent = 'Etapas';
+  else curEl.textContent = document.getElementById('peregrinacion').getBoundingClientRect().top < innerHeight * .5 && document.getElementById('final').getBoundingClientRect().top > innerHeight * .5 ? 'La peregrinación' : 'Etapas';
 };
 const navIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) markActive(e.target.id.startsWith('etapa-') ? e.target.id.split('-')[1] : null); }), { rootMargin: '-45% 0px -45% 0px' });
 etapas.forEach(s => navIO.observe(s));
-['inicio', 'prologo', 'final'].forEach(id => { const el = document.getElementById(id); if (el) navIO.observe(el); });
+['inicio', 'prologo', 'peregrinacion', 'final'].forEach(id => { const el = document.getElementById(id); if (el) navIO.observe(el); });
 
 document.querySelectorAll('[data-share]').forEach(b => b.addEventListener('click', () => {
   const n = +b.dataset.share;
-  let txt = 'El camino de las rosas · Santa Casilda, de Toledo a La Bureba. Un itinerario de fe en once etapas';
+  let txt = 'Santa Casilda · Del pan compartido a la vida entregada. El camino de las rosas, de Toledo a La Bureba, y la peregrinación del 8 y 9 de mayo de 2027';
   if (n) { const e = etapas[n - 1]; txt = `El camino de las rosas · ${e.querySelector('.etapa__rn').textContent}. ${e.querySelector('.etapa__lugar').textContent}: ${e.querySelector('.panel__title').textContent}`; }
   const url = location.href.split('#')[0] + (n ? '#etapa-' + n : '');
   window.open('https://wa.me/?text=' + encodeURIComponent(txt + '\n' + url), '_blank', 'noopener');
@@ -291,7 +291,7 @@ function initScene() {
   renderer.toneMappingExposure = .95;
 
   const scene = new THREE.Scene();
-  const BG = new THREE.Color('#0B0A08');
+  const BG = new THREE.Color('#EFE4D0');
   scene.background = BG;
   scene.fog = new THREE.FogExp2(BG, .028);
   const camera = new THREE.PerspectiveCamera(40, 1, .02, 200);
@@ -314,7 +314,7 @@ function initScene() {
   atlasTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
   if (document.fonts) document.fonts.ready.then(() => { atlasTex.image = paintAtlas(TEX_N, TEX_G); atlasTex.needsUpdate = true; });
   scene.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: atlasTex, roughness: 1, metalness: 0 })));
-  const slab = new THREE.Mesh(new THREE.BoxGeometry(MAP.w, .55, MAP.d), new THREE.MeshStandardMaterial({ color: '#3a2a1b', roughness: 1 }));
+  const slab = new THREE.Mesh(new THREE.BoxGeometry(MAP.w, .55, MAP.d), new THREE.MeshStandardMaterial({ color: '#8a6a48', roughness: 1 }));
   slab.position.set((MAP.x0 + MAP.x1) / 2, -.285, (MAP.z0 + MAP.z1) / 2); scene.add(slab);
 
   // Ruta
@@ -379,7 +379,7 @@ function initScene() {
   stationPts.forEach((p, i) => {
     if (STATIONS[i].ov === false) return;
     const beam = new THREE.Mesh(new THREE.CylinderGeometry(.015, .015, 1.4, 6, 1, true), beamMat); beam.position.set(p.x, p.y + .7, p.z); scene.add(beam);
-    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: .8 }));
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, opacity: .8 }));
     halo.position.set(p.x, p.y + .08, p.z); halo.scale.setScalar(.3); scene.add(halo);
   });
 

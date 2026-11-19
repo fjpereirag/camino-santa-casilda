@@ -16,6 +16,10 @@ Itinerario de fe en once etapas, de la familia de «El paso»: mapa en relieve t
 | X | Briviesca | La romería | Sal 122, 1-2 |
 | XI | El santuario | El final del camino | 2 Tim 4, 7 |
 
+Lema y estética tomados del cartel de la peregrinación parroquial: «Del pan compartido a la vida entregada», «No somos turistas, somos peregrinos que aprenden a amar», paleta crema, azul marino y terracota, y la acuarela de la santa ante el santuario (`img/santa-casilda-acuarela.jpg`).
+
+Antes del final, la sección **La peregrinación** recoge los datos del cartel: 8 y 9 de mayo de 2027, salida de Madrid a las 9:00, Hotel El Vallés (Briviesca), 150 €, 52 plazas (se realiza solo si se cubren), qué incluye, y un botón para descargar el cartel (`img/cartel-peregrinacion.jpg`). Inscripciones: «en la parroquia» (completar con teléfono o correo si se quiere).
+
 Al final: oración a santa Casilda (composición propia), mapa 3D girable con las etapas e índice.
 
 **Fuentes de la vida de la santa:** tradición hagiográfica (Archidiócesis de Madrid / Catholic.net), programa de las fiestas de Briviesca y descripciones del santuario. La ruta Toledo–Madrid–Somosierra–Burgos es orientativa: la tradición no fija el itinerario.
@@ -26,4 +30,4 @@ Al final: oración a santa Casilda (composición propia), mapa 3D girable con la
 Crea el repositorio `camino-santa-casilda`, sube el contenido a la raíz y activa *Settings → Pages → main / (root)*.
 
 ## Técnica
-HTML + CSS + JS sin compilación; Three.js r160 incluido en `js/`. Sin WebGL se muestra el mapa en SVG. Respeta `prefers-reduced-motion`. Variante pastoral «noche, oro y silencio».
+HTML + CSS + JS sin compilación; Three.js r160 incluido en `js/`. Sin WebGL se muestra el mapa en SVG. Respeta `prefers-reduced-motion`. Paleta clara del cartel (crema, azul marino #13344A, terracota #A9402B), revisada con contraste WCAG AA en móvil.

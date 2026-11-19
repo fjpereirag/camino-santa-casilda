@@ -204,3 +204,57 @@ main{position:relative;z-index:1}
 :root{--rosa:#b8434f}
 .etapa__rn{color:var(--accent)}
 @media (max-width:520px){.top__brand{max-width:38vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top__cur{max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+
+/* ---- Paleta del cartel de la peregrinación: crema, azul marino y terracota ---- */
+:root{--bg:#F6EFE3;--fg:#13344A;--muted:#4E5B63;--accent:#A9402B;--accent-2:#13344A;--panel:rgba(255,251,244,.97);
+  --line:color-mix(in srgb,var(--fg) 14%,transparent);--line-gold:color-mix(in srgb,#B98F5F 60%,transparent)}
+body{color:#1f2d36}
+.panel__title,.final__title,.hero__title,.parte__title,.pausa__q,.cita p,.etapa__lugar{color:var(--fg)}
+.hero__title--2 em{color:var(--accent)}
+.stage__veil{background:
+  radial-gradient(120% 85% at 50% 42%,transparent 50%,rgba(246,239,227,.7) 100%),
+  linear-gradient(to bottom,rgba(246,239,227,.9),rgba(246,239,227,.15) 24%,transparent 42%,transparent 60%,rgba(246,239,227,.7) 94%)}
+.top{background:rgba(246,239,227,.96);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.top__nav{background:rgba(250,245,236,.98)}
+.hero{background:linear-gradient(to top,rgba(246,239,227,.94) 0%,rgba(246,239,227,.82) 55%,rgba(246,239,227,0) 88%)}
+@media (min-width:800px){.hero{background:linear-gradient(to right,rgba(246,239,227,.93) 0%,rgba(246,239,227,.75) 38%,rgba(246,239,227,0) 62%)}}
+.hero__title{text-shadow:none}
+.hero__lema{margin:calc(-1 * var(--space-4)) 0 var(--space-5);color:var(--muted);font-size:1rem;max-width:30ch}
+.etapa__rn,.etapa__lugar,.etapa__hint{width:fit-content;background:rgba(250,245,236,.9);padding:.15em .45em;text-shadow:none;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.etapa__rn{color:var(--accent);padding:.08em .3em 0}
+.etapa__lugar,.etapa__hint{margin-top:0;color:var(--fg)}
+.tramo p{background:rgba(250,245,236,.88);padding:.6em .8em;text-shadow:none;color:var(--fg)}
+.panel,.final__inner,.prologo__inner,.peregrinacion__inner{box-shadow:0 18px 50px -20px rgba(19,52,74,.35)}
+.btn{background:var(--fg);border-color:var(--fg);color:#FFFBF3}
+.btn:hover{background:#0b2233}
+.btn--ghost{background:transparent;color:var(--fg);border-color:var(--fg)}
+.btn--ghost:hover{background:color-mix(in srgb,var(--fg) 8%,transparent);color:var(--fg)}
+.pausa{background:color-mix(in srgb,var(--accent) 7%,#fff)}
+.oracion{background:color-mix(in srgb,var(--accent) 6%,#fff)}
+.lbl b,.m3l span{background:rgba(19,52,74,.88);color:#FFF8EC;border-color:rgba(255,248,236,.5)}
+.mapa3d{background:#efe5d3}
+.mapa3d__hint{background:linear-gradient(transparent,rgba(239,229,211,.95));color:var(--muted)}
+.pie{background:var(--bg)}
+::selection{background:var(--accent);color:#fff}
+/* acuarela */
+.acuarela{margin:0 0 var(--space-4)}
+.acuarela img{display:block;width:100%;height:auto;border-radius:2px;-webkit-mask-image:radial-gradient(130% 120% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(130% 120% at 50% 50%,#000 70%,transparent 100%)}
+/* la peregrinación */
+.peregrinacion{position:relative;padding:var(--space-6) var(--gutter);min-height:100svh;display:flex;align-items:center}
+.peregrinacion__inner{width:100%;max-width:46rem;margin:0 auto;background:var(--panel);padding:var(--space-5) var(--space-3);border:1px solid var(--line-gold);border-radius:18px;text-align:center}
+.peregrinacion__lema{font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.7rem);color:var(--accent);margin:calc(-1 * var(--space-2)) 0 var(--space-3)}
+.peregrinacion__frase{margin:0 0 var(--space-3)}
+.peregrinacion__frase p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.65rem);color:var(--fg);margin:0}
+.fecha{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);margin:var(--space-4) 0;padding:var(--space-3);background:var(--fg);color:#FFFBF3;border-radius:12px;text-align:left}
+.fecha p{margin:0}.fecha__dia{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(1rem,2.4vw,1.25rem)}
+.fecha__sub{opacity:.9;font-size:.95rem}.fecha__precio{font-family:var(--font-display);font-weight:600;font-size:clamp(2.2rem,6vw,3.2rem);white-space:nowrap}
+.datos{margin:0 0 var(--space-3);text-align:left;display:grid;gap:var(--space-1)}
+.datos div{display:grid;grid-template-columns:7.5rem 1fr;gap:var(--space-2);padding:.6rem 0;border-bottom:1px solid var(--line)}
+.datos dt{color:var(--accent);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding-top:.2rem}
+.datos dd{margin:0}
+@media (max-width:520px){.datos div{grid-template-columns:1fr;gap:.2rem}}
+.plazas{margin:var(--space-3) 0;padding:var(--space-3);background:#efe1cc;border-radius:12px}
+.plazas p{margin:0}.plazas__t{color:var(--accent);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem!important}
+.ruta-lema{font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fg);font-size:.9rem}
+@media (max-width:520px){.top__brand{max-width:38vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.eyebrow{color:#8E3422}
