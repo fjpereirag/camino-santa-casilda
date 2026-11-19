@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es" data-variant="pastoral" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El camino de las rosas · Santa Casilda, de Toledo a La Bureba</title>
+<meta name="description" content="Un itinerario de fe en once etapas con santa Casilda: de Toledo, donde llevaba pan a los cautivos, a los lagos de San Vicente y su santuario en La Bureba. Con cita bíblica y una pregunta para la oración.">
+<meta name="theme-color" content="#0B0A08">
+<meta property="og:type" content="website">
+<meta property="og:title" content="El camino de las rosas · Santa Casilda">
+<meta property="og:description" content="De Toledo a La Bureba en once etapas: el pan escondido, las rosas, la herida, el agua que cura y el santuario.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="modulepreload" href="js/three.module.min.js">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#prologo">Saltar al contenido</a>
+
+<!-- Escena 3D fija (respaldo SVG si no hay WebGL) -->
+<div class="stage" aria-hidden="true">
+  <canvas id="mapa3d"></canvas>
+  <div class="stage__fallback"><svg viewBox="0 0 200 200" class="mapa-svg"><use href="#mapa"/></svg></div>
+  <div class="stage__veil"></div>
+  <div class="labels" id="labels"></div>
+</div>
+
+<header class="top">
+  <a class="top__brand" href="#inicio">El camino de las rosas</a>
+  <button class="top__btn" type="button" aria-expanded="false" aria-controls="menu-etapas"><span class="top__cur" id="etapa-actual">Etapas</span><i aria-hidden="true"></i></button>
+  <nav class="top__nav" id="menu-etapas" aria-label="Etapas" hidden>
+    <p class="top__grp">I · En Toledo</p>
+    <ol>
+        <li><a href="#etapa-1" data-dot="1"><span class="rn">I</span><span class="nm">Toledo</span></a></li>
+        <li><a href="#etapa-2" data-dot="2"><span class="rn">II</span><span class="nm">Las rosas</span></a></li>
+        <li><a href="#etapa-3" data-dot="3"><span class="rn">III</span><span class="nm">La herida</span></a></li>
+        <li><a href="#etapa-4" data-dot="4"><span class="rn">IV</span><span class="nm">La salida</span></a></li>
+    </ol>
+    <p class="top__grp">II · El camino</p>
+    <ol>
+        <li><a href="#etapa-5" data-dot="5"><span class="rn">V</span><span class="nm">Carabanchel</span></a></li>
+        <li><a href="#etapa-6" data-dot="6"><span class="rn">VI</span><span class="nm">La sierra</span></a></li>
+        <li><a href="#etapa-7" data-dot="7"><span class="rn">VII</span><span class="nm">El bautismo</span></a></li>
+    </ol>
+    <p class="top__grp">III · En La Bureba</p>
+    <ol>
+        <li><a href="#etapa-8" data-dot="8"><span class="rn">VIII</span><span class="nm">Las aguas</span></a></li>
+        <li><a href="#etapa-9" data-dot="9"><span class="rn">IX</span><span class="nm">La ermita</span></a></li>
+        <li><a href="#etapa-10" data-dot="10"><span class="rn">X</span><span class="nm">Briviesca</span></a></li>
+        <li><a href="#etapa-11" data-dot="11"><span class="rn">XI</span><span class="nm">El santuario</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio" data-cam="overview">
+    <p class="eyebrow reveal">Santa Casilda · De Toledo a La Bureba</p>
+    <h1 class="hero__title hero__title--2"><span class="line"><span>El camino</span></span><span class="line"><span><em>de las rosas</em></span></span></h1>
+    <p class="hero__sub reveal">Un itinerario de fe en once etapas</p>
+    <a class="hero__cue" href="#prologo"><span>Ponte en camino</span><i></i></a>
+  </section>
+
+  <!-- PRÓLOGO -->
+  <section class="prologo" id="prologo" data-cam="overview">
+    <div class="prologo__inner">
+      <p class="cap reveal"><span class="drop">E</span>n el siglo XI, una princesa musulmana de Toledo bajaba a escondidas a las mazmorras para llevar pan a los cautivos cristianos. Un día la sorprendieron, y el pan se había vuelto rosas. Enfermó, viajó al norte buscando unas aguas que curaban, se bautizó y se quedó para siempre en una ermita de La Bureba. Se llamaba Casilda.</p>
+      <p class="reveal">Casi todo lo que sabemos de ella nos llega por la tradición, escrita siglos después y contada de muchas maneras. Pero el pueblo cristiano la ha guardado durante mil años porque en ella se reconoce el Evangelio: la caridad escondida, la herida que se pone en manos de Dios, el agua que salva y la vida entregada.</p>
+      <p class="reveal muted">Once etapas sobre el mapa, de Toledo al santuario. En cada una, un lugar, una palabra de la Escritura y una pregunta para quedarte un rato en silencio.</p>
+    </div>
+  </section>
+
+  <!-- ETAPA I -->
+  <section class="etapa" id="etapa-1" data-cam="station" data-station="0">
+    <div class="etapa__head">
+      <span class="etapa__rn">I</span>
+      <p class="etapa__lugar">Toledo · El palacio</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa I · La caridad escondida</p>
+      <h2 class="panel__title">Una princesa que baja a las mazmorras</h2>
+      <p>Toledo, siglo XI. La ciudad es la capital de un reino musulmán, una taifa. Según la tradición, Casilda es hija del rey, criada entre jardines, sedas y criados. Lo tiene todo.</p>
+      <p>Pero debajo del palacio hay otra ciudad: las mazmorras donde se consumen los cautivos cristianos. Casilda no puede olvidarlos. Baja a escondidas y les lleva pan en el halda de su vestido.</p>
+      <p>Nadie le pide que lo haga. Nadie se lo agradece en público. Es una caridad que no hace ruido. Y probablemente fueron aquellos cautivos, los más pobres del reino, los primeros que le hablaron de Cristo.</p>
+      <blockquote class="cita">
+        <p>«Cuando hagas limosna, que no sepa tu mano izquierda lo que hace tu derecha; así tu limosna quedará en secreto, y tu Padre, que ve en lo secreto, te lo recompensará».</p>
+        <cite>Mateo 6, 3-4</cite>
+      </blockquote>
+      <p class="eco">«Estuve en la cárcel y vinisteis a verme». <cite>Mateo 25, 36</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Quién está hoy «en las mazmorras» cerca de mí: solo, enfermo, preso, olvidado? ¿Qué pan puedo llevarle sin que nadie lo sepa?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Mateo+25%3A31-46&amp;version=BLP" target="_blank" rel="noopener">Leer Mateo 25, 31-46</a>
+        <button class="btn btn--ghost" data-share="1" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«El Señor sostiene a los que van a caer, endereza a los que ya se doblan».<cite>Salmo 145, 14</cite></p></div>
+
+  <!-- ETAPA II -->
+  <section class="etapa etapa--firma" id="etapa-2" data-cam="station" data-station="1">
+    <div class="etapa__head etapa__head--sticky">
+      <span class="etapa__rn">II</span>
+      <p class="etapa__lugar">Toledo · Las rosas</p>
+      <p class="etapa__hint">Sigue bajando: el pan se vuelve rosas</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa II · El milagro de las rosas</p>
+      <h2 class="panel__title">«¿Qué llevas ahí?»</h2>
+      <p>Un día la sorprenden. Su padre, o sus guardias, según quien lo cuente, le cierran el paso: «¿Qué llevas en el halda?». Casilda, con el corazón en la boca, responde: «Rosas». Y al abrir el vestido, el pan se ha convertido en rosas.</p>
+      <p>Es la escena que la ha hecho famosa: la que pintó Zurbarán y la que vemos en sus imágenes. Historias parecidas se cuentan de santa Isabel de Hungría y de santa Isabel de Portugal. No es un truco para engañar a nadie: es la manera que tiene el pueblo cristiano de decir algo verdadero.</p>
+      <p>Lo que se hace por amor a los pobres, Dios lo transforma en belleza. El pan dado en secreto florece.</p>
+      <blockquote class="cita">
+        <p>«Brille así vuestra luz ante los hombres, para que vean vuestras buenas obras y den gloria a vuestro Padre que está en los cielos».</p>
+        <cite>Mateo 5, 16</cite>
+      </blockquote>
+      <p class="eco">«El desierto y el yermo se regocijarán, se alegrará la estepa y florecerá». <cite>Isaías 35, 1</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué «pan» escondido de mi vida podría Dios convertir en rosas? ¿Me da miedo que se note que soy cristiano?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Isaías+35&amp;version=BLP" target="_blank" rel="noopener">Leer Isaías 35</a>
+        <button class="btn btn--ghost" data-share="2" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Donde está tu tesoro, allí estará también tu corazón».<cite>Mateo 6, 21</cite></p></div>
+
+  <!-- ETAPA III -->
+  <section class="etapa" id="etapa-3" data-cam="station" data-station="2">
+    <div class="etapa__head">
+      <span class="etapa__rn">III</span>
+      <p class="etapa__lugar">Toledo · La enfermedad</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa III · La herida que nadie cura</p>
+      <h2 class="panel__title">Como la mujer del evangelio</h2>
+      <p>Casilda enferma. La tradición habla de un flujo de sangre que los médicos de la corte no consiguen curar. Lo tiene todo, menos la salud.</p>
+      <p>Es la misma enfermedad de la mujer del evangelio que llevaba doce años gastando su fortuna en médicos, sin mejorar. También ella se acercó a Jesús por detrás, sin hacer ruido, convencida de que bastaba tocarle el manto.</p>
+      <p>Casilda oye hablar de unas aguas en tierra cristiana, junto a un santuario de san Vicente, en Castilla, donde los enfermos se curan. La herida se convierte en llamada.</p>
+      <blockquote class="cita">
+        <p>«Había oído hablar de Jesús y, acercándose por detrás, entre la gente, le tocó el manto, pensando: “Con solo tocarle el manto curaré”».</p>
+        <cite>Marcos 5, 27-28</cite>
+      </blockquote>
+      <p class="eco">«Te basta mi gracia: la fuerza se realiza en la debilidad». <cite>2 Corintios 12, 9</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué herida llevo que nadie ha sabido curar? ¿Me atrevo a acercarme a Jesús con ella, aunque sea por detrás?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Marcos+5%3A24-34&amp;version=BLP" target="_blank" rel="noopener">Leer Marcos 5, 24-34</a>
+        <button class="btn btn--ghost" data-share="3" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Venid a mí todos los que estáis cansados y agobiados, y yo os aliviaré».<cite>Mateo 11, 28</cite></p></div>
+
+  <!-- ETAPA IV -->
+  <section class="etapa" id="etapa-4" data-cam="station" data-station="3">
+    <div class="etapa__head">
+      <span class="etapa__rn">IV</span>
+      <p class="etapa__lugar">El Tajo · La salida</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa IV · Dejar la casa del padre</p>
+      <h2 class="panel__title">Sal de tu tierra</h2>
+      <p>Toledo se asoma al Tajo, que la abraza como un foso. Para ir al norte hay que cruzarlo y dejar atrás la ciudad, el palacio, la lengua y la religión de su familia.</p>
+      <p>La tradición cuenta que su padre, aunque no compartía su fe, la dejó marchar y la puso bajo una escolta. Casilda sale como salió Abrahán: sin saber del todo adónde va, fiándose de una promesa.</p>
+      <p>Toda conversión tiene algo de salida. No se cambia de vida sin dejar algo atrás.</p>
+      <blockquote class="cita">
+        <p>«Sal de tu tierra, de tu patria y de la casa de tu padre, hacia la tierra que te mostraré».</p>
+        <cite>Génesis 12, 1</cite>
+      </blockquote>
+      <p class="eco">«Escucha, hija, mira: inclina el oído, olvida tu pueblo y la casa paterna». <cite>Salmo 45, 11</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué tengo que dejar atrás para seguir a Cristo más de cerca? ¿De qué promesa me estoy fiando?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Génesis+12%3A1-9&amp;version=BLP" target="_blank" rel="noopener">Leer Génesis 12, 1-9</a>
+        <button class="btn btn--ghost" data-share="4" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Por la fe, Abrahán, al ser llamado, obedeció y salió hacia la tierra que iba a recibir en heredad. Salió sin saber adónde iba».<cite>Hebreos 11, 8</cite></p></div>
+
+  <!-- ETAPA V -->
+  <section class="etapa" id="etapa-5" data-cam="station" data-station="4">
+    <div class="etapa__head">
+      <span class="etapa__rn">V</span>
+      <p class="etapa__lugar">Carabanchel · Una parroquia con su nombre</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa V · El camino pasa por casa</p>
+      <h2 class="panel__title">Mil años después, su nombre en un barrio</h2>
+      <p>Camino del norte, la ruta que hoy recorremos cruza las tierras donde siglos después crecería Madrid. No sabemos por dónde pasó exactamente Casilda, pero sí sabemos que su nombre ha llegado hasta aquí.</p>
+      <p>En Carabanchel hay una parroquia dedicada a santa Casilda. Un barrio de gente trabajadora, de muchas lenguas y muchos orígenes, donde también hay mazmorras invisibles: la soledad, el paro, la enfermedad, la falta de papeles.</p>
+      <p>Una princesa que vino de otra cultura y otra religión es la patrona de una comunidad mezclada. No es casualidad: es una invitación.</p>
+      <blockquote class="cita">
+        <p>«Rodeados de tan gran nube de testigos, corramos con constancia en la carrera que nos toca».</p>
+        <cite>Hebreos 12, 1</cite>
+      </blockquote>
+      <p class="eco">«Dichosos los que encuentran en ti su fuerza al preparar su peregrinación». <cite>Salmo 84, 6</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Quién llega hoy a mi barrio desde otra tierra, como Casilda? ¿Qué hace mi parroquia, y qué hago yo, con el pan y las rosas?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Hebreos+12%3A1-3&amp;version=BLP" target="_blank" rel="noopener">Leer Hebreos 12, 1-3</a>
+        <button class="btn btn--ghost" data-share="5" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Tu palabra es lámpara para mis pasos, luz en mi sendero».<cite>Salmo 119, 105</cite></p></div>
+
+  <!-- ETAPA VI -->
+  <section class="etapa" id="etapa-6" data-cam="station" data-station="5">
+    <div class="etapa__head">
+      <span class="etapa__rn">VI</span>
+      <p class="etapa__lugar">Somosierra · El puerto</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VI · Cruzar la sierra</p>
+      <h2 class="panel__title">Levanto mis ojos a los montes</h2>
+      <p>Entre Toledo y Castilla se levanta una muralla de granito: la sierra. En tiempos de Casilda era casi una frontera entre dos mundos. Cruzarla por el puerto, con frío y cansancio, era una prueba.</p>
+      <p>Todo camino de fe tiene su puerto de montaña: un tramo en el que las fuerzas no llegan y la meta todavía no se ve. Es el momento de mirar más alto.</p>
+      <p>Los peregrinos de todos los tiempos han rezado subiendo. Los salmos de las subidas eran los cantos de quienes iban a Jerusalén paso a paso.</p>
+      <blockquote class="cita">
+        <p>«Levanto mis ojos a los montes: ¿de dónde me vendrá el auxilio? El auxilio me viene del Señor, que hizo el cielo y la tierra».</p>
+        <cite>Salmo 121, 1-2</cite>
+      </blockquote>
+      <p class="eco">«Los que esperan en el Señor renuevan sus fuerzas, echan alas como las águilas». <cite>Isaías 40, 31</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Cuál es hoy mi puerto de montaña? ¿En quién me apoyo cuando me faltan las fuerzas?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Salmo+121&amp;version=BLP" target="_blank" rel="noopener">Leer Salmo 121</a>
+        <button class="btn btn--ghost" data-share="6" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Aunque camine por cañadas oscuras, nada temo, porque tú vas conmigo».<cite>Salmo 23, 4</cite></p></div>
+
+  <!-- ETAPA VII -->
+  <section class="etapa" id="etapa-7" data-cam="station" data-station="6">
+    <div class="etapa__head">
+      <span class="etapa__rn">VII</span>
+      <p class="etapa__lugar">Burgos · El bautismo</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VII · Revestida de Cristo</p>
+      <h2 class="panel__title">Una hija nueva</h2>
+      <p>Según la tradición, al llegar a Castilla Casilda pidió el bautismo, y lo recibió en Burgos. La princesa de Toledo se convierte en hija de Dios.</p>
+      <p>Lo que había empezado en las mazmorras, escuchando a los cautivos, llega a su plenitud: ya no lleva a Cristo a escondidas en el halda, sino que se reviste de él.</p>
+      <p>En el bautismo no hay princesas ni cautivos, ni moros ni cristianos viejos: hay hijos. Esa es la gran noticia que Casilda descubrió en las mazmorras.</p>
+      <blockquote class="cita">
+        <p>«Los que habéis sido bautizados en Cristo, os habéis revestido de Cristo. No hay judío y griego, esclavo y libre, hombre y mujer, porque todos sois uno en Cristo Jesús».</p>
+        <cite>Gálatas 3, 27-28</cite>
+      </blockquote>
+      <p class="eco">«Derramaré sobre vosotros un agua pura que os purificará […] y os daré un corazón nuevo». <cite>Ezequiel 36, 25-26</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Sé la fecha de mi bautismo? ¿Vivo como hijo de Dios o como alguien que tiene que ganarse su lugar?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Gálatas+3%3A23-29&amp;version=BLP" target="_blank" rel="noopener">Leer Gálatas 3, 23-29</a>
+        <button class="btn btn--ghost" data-share="7" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Como busca la cierva corrientes de agua, así mi alma te busca a ti, Dios mío».<cite>Salmo 42, 2</cite></p></div>
+
+  <!-- ETAPA VIII -->
+  <section class="etapa etapa--firma" id="etapa-8" data-cam="station" data-station="7">
+    <div class="etapa__head etapa__head--sticky">
+      <span class="etapa__rn">VIII</span>
+      <p class="etapa__lugar">Los lagos de San Vicente</p>
+      <p class="etapa__hint">Sigue bajando: las aguas brillan</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VIII · La curación</p>
+      <h2 class="panel__title">Hija, tu fe te ha salvado</h2>
+      <p>Al pie de una peña, en La Bureba, cerca de Briviesca, brotan unas aguas junto a un antiguo santuario de san Vicente: los lagos o pozos que todavía hoy se visitan. Allí se baña Casilda, y allí queda curada.</p>
+      <p>El agua que cura después del agua que salva: primero el bautismo, después la salud. Dios no se olvida del cuerpo.</p>
+      <p>Desde entonces, muchos han venido a estas aguas con sus heridas. Las mujeres que desean un hijo arrojan una piedra al pozo y se encomiendan a la santa. La piedad popular lo ha guardado durante siglos.</p>
+      <blockquote class="cita">
+        <p>«Hija, tu fe te ha salvado. Vete en paz y queda curada de tu enfermedad».</p>
+        <cite>Marcos 5, 34</cite>
+      </blockquote>
+      <p class="eco">«Sacaréis aguas con gozo de las fuentes de la salvación». <cite>Isaías 12, 3</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿A qué fuentes acudo cuando estoy herido? ¿Le he contado a Jesús, cara a cara, toda la verdad de mi herida?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Isaías+12&amp;version=BLP" target="_blank" rel="noopener">Leer Isaías 12</a>
+        <button class="btn btn--ghost" data-share="8" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Venid vosotros solos a un lugar desierto a descansar un poco».<cite>Marcos 6, 31</cite></p></div>
+
+  <!-- ETAPA IX -->
+  <section class="etapa" id="etapa-9" data-cam="station" data-station="8">
+    <div class="etapa__head">
+      <span class="etapa__rn">IX</span>
+      <p class="etapa__lugar">La ermita</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa IX · La vida escondida</p>
+      <h2 class="panel__title">Una princesa que se queda</h2>
+      <p>Curada, Casilda podría volver a Toledo. No vuelve. Se queda junto a las aguas, en la peña, y consagra a Dios su vida en una ermita, entre la oración y la penitencia.</p>
+      <p>La tradición dice que vivió allí hasta muy anciana y que allí fue enterrada. La que lo tuvo todo eligió lo único necesario.</p>
+      <p>La vida escondida no es una huida. Es quedarse delante de Dios por todos: por los cautivos de Toledo, por su familia, por los que vendrían después.</p>
+      <blockquote class="cita">
+        <p>«La llevaré al desierto y le hablaré al corazón».</p>
+        <cite>Oseas 2, 16</cite>
+      </blockquote>
+      <p class="eco">«Cuando vayas a orar, entra en tu cuarto, cierra la puerta y ora a tu Padre, que está en lo escondido». <cite>Mateo 6, 6</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Tengo una «ermita» en mi día, un rato y un lugar para estar a solas con Dios? ¿Qué tendría que dejar para cuidarlo?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Oseas+2%3A16-25&amp;version=BLP" target="_blank" rel="noopener">Leer Oseas 2, 16-25</a>
+        <button class="btn btn--ghost" data-share="9" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Yo soy el camino, y la verdad, y la vida».<cite>Juan 14, 6</cite></p></div>
+
+  <!-- ETAPA X -->
+  <section class="etapa" id="etapa-10" data-cam="station" data-station="9">
+    <div class="etapa__head">
+      <span class="etapa__rn">X</span>
+      <p class="etapa__lugar">Briviesca · La romería</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa X · Un pueblo que camina</p>
+      <h2 class="panel__title">¡Vamos a la casa del Señor!</h2>
+      <p>Briviesca, capital de La Bureba, tiene a santa Casilda como patrona de la comarca. En su fiesta, en torno al 9 de mayo, la procesión sale de la iglesia de San Martín y sube a pie unos nueve kilómetros hasta el santuario.</p>
+      <p>Después llegan la misa, la comida en el campo, las rosquillas de santa Casilda y el juego de la tabera. La fe se celebra con los pies, con la mesa compartida y con la fiesta.</p>
+      <p>Peregrinar no es hacer turismo religioso. Es recordar con el cuerpo que somos un pueblo en camino, y que no caminamos solos.</p>
+      <blockquote class="cita">
+        <p>«¡Qué alegría cuando me dijeron: “Vamos a la casa del Señor”! Ya están pisando nuestros pies tus umbrales, Jerusalén».</p>
+        <cite>Salmo 122, 1-2</cite>
+      </blockquote>
+      <p class="eco">«Jesús en persona se acercó y se puso a caminar con ellos». <cite>Lucas 24, 15</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Con quién camino en la fe? ¿A quién podría invitar a hacer este camino conmigo?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Salmo+122&amp;version=BLP" target="_blank" rel="noopener">Leer Salmo 122</a>
+        <button class="btn btn--ghost" data-share="10" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Nosotros, en cambio, somos ciudadanos del cielo».<cite>Filipenses 3, 20</cite></p></div>
+
+  <!-- ETAPA XI -->
+  <section class="etapa" id="etapa-11" data-cam="station" data-station="10">
+    <div class="etapa__head">
+      <span class="etapa__rn">XI</span>
+      <p class="etapa__lugar">El santuario de Santa Casilda</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa XI · El final del camino</p>
+      <h2 class="panel__title">He acabado la carrera</h2>
+      <p>Sobre la peña se levanta hoy el santuario, construido sobre la ermita primitiva y reformado a lo largo de los siglos. Allí descansan los restos de la santa, en un sepulcro con su imagen yacente, y desde su mirador se domina toda La Bureba.</p>
+      <p>Las paredes, llenas de exvotos y fotografías, cuentan mil historias de enfermos, de madres, de caminantes. La princesa que bajaba a las mazmorras sigue bajando hoy a las heridas de quien se acerca.</p>
+      <p>El camino de las rosas termina aquí, pero no se cierra. Desde Carabanchel venimos a este santuario como hermanos, y de aquí volvemos a casa con el encargo de Casilda: pan para los cautivos, y rosas.</p>
+      <blockquote class="cita">
+        <p>«He combatido el noble combate, he acabado la carrera, he mantenido la fe».</p>
+        <cite>2 Timoteo 4, 7</cite>
+      </blockquote>
+      <p class="eco">«Ved qué dulzura, qué delicia, convivir los hermanos unidos». <cite>Salmo 133, 1</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">Cuando termine mi camino, ¿qué me gustaría haber dejado? ¿Qué pan y qué rosas me llevo de vuelta a casa?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=2+Timoteo+4%3A6-8&amp;version=BLP" target="_blank" rel="noopener">Leer 2 Timoteo 4, 6-8</a>
+        <button class="btn btn--ghost" data-share="11" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" id="final" data-cam="end">
+    <div class="final__inner">
+      <p class="eyebrow reveal">Y ahora, tú</p>
+      <h2 class="final__title reveal">Pan para los cautivos, y rosas</h2>
+      <p class="reveal">El camino de Casilda empezó bajando a las mazmorras y terminó en una peña, delante de Dios. Entre medias hubo una herida, un viaje, un bautismo y un agua que cura. Es el camino de todo cristiano.</p>
+      <p class="reveal">Desde la parroquia de Santa Casilda, en Carabanchel, peregrinamos a Briviesca y al santuario para encontrarnos con ella y con la comunidad que la guarda. Pero el camino de las rosas empieza en casa: en las mazmorras de nuestro barrio, donde alguien espera un pan que nadie le lleva.</p>
+      <p class="final__pregunta reveal">¿Quién espera hoy tu pan? ¿Qué rosas quiere Dios hacer florecer en tu vida?</p>
+      <div class="oracion reveal">
+        <p class="pausa__label">Oración a santa Casilda</p>
+        <p>Santa Casilda, que bajabas a escondidas a las mazmorras con pan para los cautivos, enséñanos la caridad que no hace ruido. Tú que pusiste tu herida en manos de Dios y encontraste el agua que cura, acompaña a los enfermos y a quienes esperan un hijo. Tú que lo dejaste todo para vivir delante de Dios, guarda nuestra parroquia y a todos los que caminan hacia tu santuario. Amén.</p>
+      </div>
+      <figure class="final__mapa reveal">
+        <div class="mapa3d" id="mapa3d-wrap">
+          <canvas id="mapa3d-final" role="img" aria-label="Mapa 3D con el camino de santa Casilda y las once etapas. Arrastra para girarlo."></canvas>
+          <div class="mapa3d__labels" id="mapa3d-labels"></div>
+          <svg viewBox="0 0 200 200" class="mapa-svg mapa3d__fallback" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado con las once etapas</title><use href="#mapa"/></svg>
+          <p class="mapa3d__hint">Arrastra para girar · toca una etapa para ir a ella</p>
+        </div>
+        <div class="final__indices">
+          <p class="final__grp">I · En Toledo</p>
+          <ol class="final__index">
+          <li><a href="#etapa-1"><span class="rn">I</span> <span class="nm">Toledo</span><em>La caridad escondida</em></a></li>
+          <li><a href="#etapa-2"><span class="rn">II</span> <span class="nm">Las rosas</span><em>El milagro de las rosas</em></a></li>
+          <li><a href="#etapa-3"><span class="rn">III</span> <span class="nm">La herida</span><em>La herida que nadie cura</em></a></li>
+          <li><a href="#etapa-4"><span class="rn">IV</span> <span class="nm">La salida</span><em>Dejar la casa del padre</em></a></li>
+          </ol>
+          <p class="final__grp">II · El camino</p>
+          <ol class="final__index">
+          <li><a href="#etapa-5"><span class="rn">V</span> <span class="nm">Carabanchel</span><em>El camino pasa por casa</em></a></li>
+          <li><a href="#etapa-6"><span class="rn">VI</span> <span class="nm">La sierra</span><em>Cruzar la sierra</em></a></li>
+          <li><a href="#etapa-7"><span class="rn">VII</span> <span class="nm">El bautismo</span><em>Revestida de Cristo</em></a></li>
+          </ol>
+          <p class="final__grp">III · En La Bureba</p>
+          <ol class="final__index">
+          <li><a href="#etapa-8"><span class="rn">VIII</span> <span class="nm">Las aguas</span><em>La curación</em></a></li>
+          <li><a href="#etapa-9"><span class="rn">IX</span> <span class="nm">La ermita</span><em>La vida escondida</em></a></li>
+          <li><a href="#etapa-10"><span class="rn">X</span> <span class="nm">Briviesca</span><em>Un pueblo que camina</em></a></li>
+          <li><a href="#etapa-11"><span class="rn">XI</span> <span class="nm">El santuario</span><em>El final del camino</em></a></li>
+          </ol>
+        </div>
+      </figure>
+      <div class="acciones acciones--center">
+        <button class="btn" data-share="0" type="button">Compartir el camino por WhatsApp</button>
+        <a class="btn btn--ghost" href="#inicio">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>Itinerario de oración con santa Casilda (fiesta: 9 de abril). La vida de la santa sigue la tradición recogida por sus biografías y por la devoción popular de Toledo y La Bureba; la ruta del mapa es orientativa. La oración final es una composición propia. Textos bíblicos: Sagrada Biblia, versión oficial de la Conferencia Episcopal Española.</p>
+</footer>
+
+<!-- Mapa ilustrado (SVG reutilizable: respaldo y mapa final). Coordenadas: x,z → ×10+100 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mapa" viewBox="0 0 200 200">
+      <rect width="200" height="200" fill="#1b1610"/>
+      <image id="mapa-img" x="0" y="0" width="200" height="200" href=""/>
+      <path id="ruta-svg" d="" stroke="#9b2a1c" stroke-width="1.6" stroke-dasharray="3 3" fill="none"/>
+      <g id="st-svg" font-family="Cormorant Garamond, Georgia, serif" font-size="8" font-weight="600" fill="#F2EBDD" text-anchor="middle"></g>
+    </symbol>
+  </defs>
+</svg>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
