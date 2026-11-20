@@ -40,13 +40,21 @@ La web ya funciona con la voz del navegador, pero suena mejor con locuciones gra
 2. Haz doble clic en **`generar-audio.bat`** (en Windows). Instala `edge-tts` y crea un MP3 por pieza en `audio/voz/`: `prologo.mp3`, `etapa-1.mp3` … `etapa-11.mp3` y `final.mp3`, más `manifest.json`.
 3. Sube la carpeta `audio/voz/` al repositorio. La web usa esos MP3 automáticamente; si falta alguno, ese tramo lo lee la voz del navegador.
 
+**Versión 2 del generador:** cada locución se arma por bloques con silencios reales entre ellos (pausa tras el título, entre párrafos, antes de la Palabra de Dios y tres segundos al final para rezar). Lee los números en palabras («Etapa dos», «siglo once») y las citas completas («Mateo, capítulo 6, versículos 3 al 4»). Por defecto: Elvira, un 10 % más lenta y un tono algo más grave.
+
 Opciones (desde una consola en la carpeta del proyecto):
+- `generar-audio.bat --muestras` · crea en `audio/muestras/` una muestra con cada voz femenina en español para elegir.
+- `generar-audio.bat --pausas 1.3` · pausas un 30 % más largas.
+- `generar-audio.bat --tono -3Hz` · voz algo más grave.
 - `generar-audio.bat --voz es-ES-XimenaNeural` · otra voz femenina (también `es-ES-ElviraNeural`, la predeterminada, o `es-MX-DaliaNeural`).
 - `generar-audio.bat --lista` · ver todas las voces femeninas en español.
 - `generar-audio.bat --solo etapa-3` · rehacer solo una pieza.
 - `generar-audio.bat --velocidad -12%` · leer más despacio.
 
 Los textos que se leen están en `audio/narracion.json` (se generan desde los datos de la web: nombre de la etapa, título, texto, la Palabra de Dios y la pregunta para la oración). Usa las voces neuronales gratuitas de Microsoft Edge: no necesita clave, pero sí internet.
+
+## Acuarelas de las etapas
+Los prompts están en `img/etapas/PROMPTS.md`. Guarda cada imagen como `img/etapas/etapa-1.jpg` … `etapa-11.jpg` (16:9, unos 1600 × 900 px). La web la muestra al principio del panel de su etapa, con un zoom lento; si falta, la etapa se ve sin imagen.
 
 ## Revisión con Hallmark
 Aplicados los arreglos de la auditoría: títulos sin cursiva, un único antetítulo (el de la peregrinación), etiquetas en caja normal, titular sin palabra coloreada, botones en una sola línea, todos los colores del CSS como tokens con nombre en OKLCH (`--papel`, `--tinta`, `--terracota`, `--oro-viejo`…) y `overflow-x: clip`. Los colores de la escena 3D siguen en `js/main.js` porque son materiales de Three.js, no estilos.

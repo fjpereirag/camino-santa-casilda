@@ -342,3 +342,8 @@ html,body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){.panel,.prologo__inner,.tramo p,.final__inner,.peregrinacion__inner,.hero > *,.stage__veil{transition:opacity .15s linear}}
 .etapa__head--sticky .etapa__tema{top:calc(var(--top-h) + var(--space-4) + var(--step-rn)*.85 + 2.6rem)}
 .etapa__head--sticky .etapa__hint{top:calc(var(--top-h) + var(--space-4) + var(--step-rn)*.85 + 4.4rem)}
+/* acuarelas de cada etapa (img/etapas/etapa-N.jpg) */
+.acuarela--etapa{margin:0 0 var(--space-3);overflow:hidden;border-radius:2px}
+.acuarela--etapa img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transform:scale(1.06);transition:transform 9s linear}
+.panel.is-visto .acuarela--etapa img{transform:scale(1)}
+@media (prefers-reduced-motion:reduce){.acuarela--etapa img{transform:none;transition:none}}

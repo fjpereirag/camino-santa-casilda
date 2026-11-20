@@ -144,3 +144,9 @@
   });
   sync();
 })();
+
+// Acuarelas: movimiento lento (zoom suave) al aparecer cada panel
+(function () {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visto'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -20% 0px' });
+  document.querySelectorAll('.panel').forEach(p => io.observe(p));
+})();
