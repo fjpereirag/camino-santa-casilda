@@ -93,7 +93,6 @@
   const modoBtns = [...document.querySelectorAll('[data-modo]')], ctl = document.querySelector('.audio-ctl');
   function sync() {
     modoBtns.forEach(b => b.setAttribute('aria-pressed', state[b.dataset.modo] ? 'true' : 'false'));
-    if (ctl) ctl.hidden = !(state.voz || state.musica);
   }
   function setVoz(on) {
     state.voz = on && (!!synth || piezas.size > 0);
@@ -115,6 +114,15 @@
     read(sec);
   }));
   if (!synth) { document.documentElement.classList.add('no-voz'); }
+
+  /* ---------- Ocultar los textos para ver solo el mapa ---------- */
+  const ojo = document.querySelector('[data-textos]');
+  if (ojo) ojo.addEventListener('click', () => {
+    const on = document.body.classList.toggle('sin-textos');
+    ojo.setAttribute('aria-pressed', on ? 'true' : 'false');
+    ojo.setAttribute('aria-label', on ? 'Mostrar los textos' : 'Ocultar los textos para ver el mapa');
+    ojo.title = on ? 'Mostrar los textos' : 'Ocultar los textos';
+  });
 
   /* ---------- Con la voz activada, cada etapa se lee al llegar a ella ---------- */
   const sections = [document.getElementById('prologo'), ...document.querySelectorAll('.etapa'), document.getElementById('final')].filter(Boolean);

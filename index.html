@@ -68,6 +68,14 @@
     <h1 class="hero__title hero__title--2"><span class="line"><span>El camino</span></span><span class="line"><span><em>de las rosas</em></span></span></h1>
     <p class="hero__sub reveal">Del pan compartido a la vida entregada</p>
     <p class="hero__lema reveal">Un itinerario de fe en once etapas, de Toledo a La Bureba</p>
+  <div class="modo modo--hero reveal">
+      <p class="modo__t">Elige cómo quieres vivirlo</p>
+      <div class="modo__btns">
+        <button class="modo__b" type="button" data-modo="voz" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span><b>Voz</b><small>Una voz lee cada etapa</small></span></button>
+        <button class="modo__b" type="button" data-modo="musica" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17V5l11-2v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="2.5" fill="currentColor"/><circle cx="17.5" cy="15" r="2.5" fill="currentColor"/></svg><span><b>Música</b><small>Música de fondo</small></span></button>
+      </div>
+      <p class="modo__nota">Puedes cambiarlo cuando quieras con los botones de abajo. El ojo oculta los textos para ver solo el mapa.</p>
+    </div>
     <a class="hero__cue" href="#prologo"><span>Ponte en camino</span><i></i></a>
   </section>
 
@@ -78,14 +86,6 @@
       <p class="cap reveal"><span class="drop">E</span>n el siglo XI, una princesa musulmana de Toledo bajaba a escondidas a las mazmorras para llevar pan a los cautivos cristianos. Un día la sorprendieron, y el pan se había vuelto rosas. Enfermó, viajó al norte buscando unas aguas que curaban, se bautizó y se quedó para siempre en una ermita de La Bureba. Se llamaba Casilda.</p>
       <p class="reveal">Casi todo lo que sabemos de ella nos llega por la tradición, escrita siglos después y contada de muchas maneras. Pero el pueblo cristiano la ha guardado durante mil años porque en ella se reconoce el Evangelio: la caridad escondida, la herida que se pone en manos de Dios, el agua que salva y la vida entregada.</p>
       <p class="reveal muted">Once etapas sobre el mapa, de Toledo al santuario. En cada una, un lugar, una palabra de la Escritura y una pregunta para quedarte un rato en silencio.</p>
-      <div class="modo reveal">
-        <p class="modo__t">Antes de empezar, elige cómo quieres vivirlo</p>
-        <div class="modo__btns">
-          <button class="modo__b" type="button" data-modo="voz" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span><b>Voz</b><small>Una voz lee cada etapa</small></span></button>
-          <button class="modo__b" type="button" data-modo="musica" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17V5l11-2v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="2.5" fill="currentColor"/><circle cx="17.5" cy="15" r="2.5" fill="currentColor"/></svg><span><b>Música</b><small>Música de fondo</small></span></button>
-        </div>
-        <p class="modo__nota">Puedes activar las dos, una o ninguna, y cambiarlo cuando quieras.</p>
-      </div>
     </div>
   </section>
 
@@ -529,9 +529,10 @@
 </svg>
 
 <audio id="musica" src="audio/musica-santa-casilda.mp3" loop preload="none"></audio>
-<div class="audio-ctl" hidden>
+<div class="audio-ctl">
   <button class="audio-ctl__b" type="button" data-modo="voz" aria-pressed="false" aria-label="Voz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   <button class="audio-ctl__b" type="button" data-modo="musica" aria-pressed="false" aria-label="Música"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17V5l11-2v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="2.5" fill="currentColor"/><circle cx="17.5" cy="15" r="2.5" fill="currentColor"/></svg></button>
+  <button class="audio-ctl__b audio-ctl__ojo" type="button" data-textos aria-pressed="false" aria-label="Ocultar los textos para ver el mapa" title="Ocultar los textos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></button>
 </div>
 
 <script type="module" src="js/main.js"></script>

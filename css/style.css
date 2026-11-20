@@ -326,3 +326,19 @@ html,body{overflow-x:clip}
 /* 5 · botones siempre en una línea */
 .btn{white-space:nowrap}
 .acciones{flex-wrap:wrap}
+
+/* ---- Elección al principio y modo «solo mapa» ---- */
+.modo--hero{max-width:30rem;margin:0 0 var(--space-4);padding:var(--space-2) var(--space-2) var(--space-2);text-align:left;background:color-mix(in oklch,var(--crema) 92%,transparent)}
+.modo--hero .modo__t{font-size:1.15rem;margin-bottom:var(--space-1)}
+.modo--hero .modo__b{min-height:56px;padding:.55rem .8rem}
+.modo--hero .modo__nota{font-size:.8rem;margin-top:var(--space-1)}
+@media (max-width:420px){.modo--hero .modo__btns{grid-template-columns:1fr 1fr}.modo--hero .modo__b small{display:none}}
+.hero{justify-content:flex-end;padding-top:calc(var(--top-h) + var(--space-3))}
+.panel,.prologo__inner,.tramo p,.final__inner,.peregrinacion__inner,.hero > *,.stage__veil,.etapa__tema,.etapa__hint{transition:opacity .45s var(--ease-out)}
+.sin-textos .panel,.sin-textos .prologo__inner,.sin-textos .tramo p,.sin-textos .final__inner,.sin-textos .peregrinacion__inner,.sin-textos .hero > *,.sin-textos .etapa__tema,.sin-textos .etapa__hint{opacity:0;pointer-events:none}
+.sin-textos .stage__veil{opacity:.25}
+.sin-textos .hero{background:none}
+.audio-ctl__ojo[aria-pressed="true"]{opacity:1}
+@media (prefers-reduced-motion:reduce){.panel,.prologo__inner,.tramo p,.final__inner,.peregrinacion__inner,.hero > *,.stage__veil{transition:opacity .15s linear}}
+.etapa__head--sticky .etapa__tema{top:calc(var(--top-h) + var(--space-4) + var(--step-rn)*.85 + 2.6rem)}
+.etapa__head--sticky .etapa__hint{top:calc(var(--top-h) + var(--space-4) + var(--step-rn)*.85 + 4.4rem)}
