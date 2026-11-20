@@ -19,6 +19,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <link rel="modulepreload" href="js/three.module.min.js">
 <link rel="stylesheet" href="css/style.css">
+<script>
+  // Acuarelas: acepta etapa-N.jpg, .jpeg, .png o .webp (también en mayúsculas); si no hay ninguna, se quita el hueco
+  window.acuarelaFalta = function (img) {
+    var ext = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.WEBP'], i = +(img.dataset.i || 0) + 1;
+    if (i < ext.length) { img.dataset.i = i; img.src = img.dataset.base + ext[i]; } else if (img.parentNode) img.parentNode.remove();
+  };
+</script>
 </head>
 <body>
 <a class="skip" href="#prologo">Saltar al contenido</a>
@@ -97,7 +104,7 @@
       <p class="etapa__tema">La caridad escondida</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-1.jpg" width="1600" height="900" alt="Acuarela: Toledo · El palacio" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-1.jpg" data-base="img/etapas/etapa-1" width="1600" height="893" alt="Acuarela: Toledo · El palacio" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Una princesa que baja a las mazmorras</h2>
       <p>Toledo, siglo XI. La ciudad es la capital de un reino musulmán, una taifa. Según la tradición, Casilda es hija del rey, criada entre jardines, sedas y criados. Lo tiene todo.</p>
       <p>Pero debajo del palacio hay otra ciudad: las mazmorras donde se consumen los cautivos cristianos. Casilda no puede olvidarlos. Baja a escondidas y les lleva pan en el halda de su vestido.</p>
@@ -130,7 +137,7 @@
       <p class="etapa__hint">Sigue bajando: el pan se vuelve rosas</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-2.jpg" width="1600" height="900" alt="Acuarela: Toledo · Las rosas" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-2.jpg" data-base="img/etapas/etapa-2" width="1600" height="893" alt="Acuarela: Toledo · Las rosas" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">«¿Qué llevas ahí?»</h2>
       <p>Un día la sorprenden. Su padre, o sus guardias, según quien lo cuente, le cierran el paso: «¿Qué llevas en el halda?». Casilda, con el corazón en la boca, responde: «Rosas». Y al abrir el vestido, el pan se ha convertido en rosas.</p>
       <p>Es la escena que la ha hecho famosa: la que pintó Zurbarán y la que vemos en sus imágenes. Historias parecidas se cuentan de santa Isabel de Hungría y de santa Isabel de Portugal. No es un truco para engañar a nadie: es la manera que tiene el pueblo cristiano de decir algo verdadero.</p>
@@ -162,7 +169,7 @@
       <p class="etapa__tema">La herida que nadie cura</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-3.jpg" width="1600" height="900" alt="Acuarela: Toledo · La enfermedad" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-3.jpg" data-base="img/etapas/etapa-3" width="1600" height="893" alt="Acuarela: Toledo · La enfermedad" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Como la mujer del evangelio</h2>
       <p>Casilda enferma. La tradición habla de un flujo de sangre que los médicos de la corte no consiguen curar. Lo tiene todo, menos la salud.</p>
       <p>Es la misma enfermedad de la mujer del evangelio que llevaba doce años gastando su fortuna en médicos, sin mejorar. También ella se acercó a Jesús por detrás, sin hacer ruido, convencida de que bastaba tocarle el manto.</p>
@@ -194,7 +201,7 @@
       <p class="etapa__tema">Dejar la casa del padre</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-4.jpg" width="1600" height="900" alt="Acuarela: El Tajo · La salida" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-4.jpg" data-base="img/etapas/etapa-4" width="1600" height="893" alt="Acuarela: El Tajo · La salida" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Sal de tu tierra</h2>
       <p>Toledo se asoma al Tajo, que la abraza como un foso. Para ir al norte hay que cruzarlo y dejar atrás la ciudad, el palacio, la lengua y la religión de su familia.</p>
       <p>La tradición cuenta que su padre, aunque no compartía su fe, la dejó marchar y la puso bajo una escolta. Casilda sale como salió Abrahán: sin saber del todo adónde va, fiándose de una promesa.</p>
@@ -226,7 +233,7 @@
       <p class="etapa__tema">El camino pasa por casa</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-5.jpg" width="1600" height="900" alt="Acuarela: Carabanchel · Una parroquia con su nombre" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-5.jpg" data-base="img/etapas/etapa-5" width="1600" height="893" alt="Acuarela: Carabanchel · Una parroquia con su nombre" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Mil años después, su nombre en un barrio</h2>
       <p>Camino del norte, la ruta que hoy recorremos cruza las tierras donde siglos después crecería Madrid. No sabemos por dónde pasó exactamente Casilda, pero sí sabemos que su nombre ha llegado hasta aquí.</p>
       <p>En Carabanchel hay una parroquia dedicada a santa Casilda. Un barrio de gente trabajadora, de muchas lenguas y muchos orígenes, donde también hay mazmorras invisibles: la soledad, el paro, la enfermedad, la falta de papeles.</p>
@@ -258,7 +265,7 @@
       <p class="etapa__tema">Cruzar la sierra</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-6.jpg" width="1600" height="900" alt="Acuarela: Somosierra · El puerto" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-6.jpg" data-base="img/etapas/etapa-6" width="1600" height="893" alt="Acuarela: Somosierra · El puerto" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Levanto mis ojos a los montes</h2>
       <p>Entre Toledo y Castilla se levanta una muralla de granito: la sierra. En tiempos de Casilda era casi una frontera entre dos mundos. Cruzarla por el puerto, con frío y cansancio, era una prueba.</p>
       <p>Todo camino de fe tiene su puerto de montaña: un tramo en el que las fuerzas no llegan y la meta todavía no se ve. Es el momento de mirar más alto.</p>
@@ -290,7 +297,7 @@
       <p class="etapa__tema">Revestida de Cristo</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-7.jpg" width="1600" height="900" alt="Acuarela: Burgos · El bautismo" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-7.jpg" data-base="img/etapas/etapa-7" width="1600" height="893" alt="Acuarela: Burgos · El bautismo" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Una hija nueva</h2>
       <p>Según la tradición, al llegar a Castilla Casilda pidió el bautismo, y lo recibió en Burgos. La princesa de Toledo se convierte en hija de Dios.</p>
       <p>Lo que había empezado en las mazmorras, escuchando a los cautivos, llega a su plenitud: ya no lleva a Cristo a escondidas en el halda, sino que se reviste de él.</p>
@@ -323,7 +330,7 @@
       <p class="etapa__hint">Sigue bajando: las aguas brillan</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-8.jpg" width="1600" height="900" alt="Acuarela: Los lagos de San Vicente" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-8.jpg" data-base="img/etapas/etapa-8" width="1600" height="893" alt="Acuarela: Los lagos de San Vicente" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Hija, tu fe te ha salvado</h2>
       <p>Al pie de una peña, en La Bureba, cerca de Briviesca, brotan unas aguas junto a un antiguo santuario de san Vicente: los lagos o pozos que todavía hoy se visitan. Allí se baña Casilda, y allí queda curada.</p>
       <p>El agua que cura después del agua que salva: primero el bautismo, después la salud. Dios no se olvida del cuerpo.</p>
@@ -355,7 +362,7 @@
       <p class="etapa__tema">La vida escondida</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-9.jpg" width="1600" height="900" alt="Acuarela: La ermita" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-9.jpg" data-base="img/etapas/etapa-9" width="1600" height="893" alt="Acuarela: La ermita" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">Una princesa que se queda</h2>
       <p>Curada, Casilda podría volver a Toledo. No vuelve. Se queda junto a las aguas, en la peña, y consagra a Dios su vida en una ermita, entre la oración y la penitencia.</p>
       <p>La tradición dice que vivió allí hasta muy anciana y que allí fue enterrada. La que lo tuvo todo eligió lo único necesario.</p>
@@ -387,7 +394,7 @@
       <p class="etapa__tema">Un pueblo que camina</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-10.jpg" width="1600" height="900" alt="Acuarela: Briviesca · La romería" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-10.jpg" data-base="img/etapas/etapa-10" width="1600" height="893" alt="Acuarela: Briviesca · La romería" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">¡Vamos a la casa del Señor!</h2>
       <p>Briviesca, capital de La Bureba, tiene a santa Casilda como patrona de la comarca. En su fiesta, en torno al 9 de mayo, la procesión sale de la iglesia de San Martín y sube a pie unos nueve kilómetros hasta el santuario.</p>
       <p>Después llegan la misa, la comida en el campo, las rosquillas de santa Casilda y el juego de la tabera. La fe se celebra con los pies, con la mesa compartida y con la fiesta.</p>
@@ -419,7 +426,7 @@
       <p class="etapa__tema">El final del camino</p>
     </div>
     <article class="panel">
-      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-11.jpg" width="1600" height="900" alt="Acuarela: El santuario de Santa Casilda" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+      <figure class="acuarela acuarela--etapa"><img src="img/etapas/etapa-11.jpg" data-base="img/etapas/etapa-11" width="1600" height="893" alt="Acuarela: El santuario de Santa Casilda" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="panel__title">He acabado la carrera</h2>
       <p>Sobre la peña se levanta hoy el santuario, construido sobre la ermita primitiva y reformado a lo largo de los siglos. Allí descansan los restos de la santa, en un sepulcro con su imagen yacente, y desde su mirador se domina toda La Bureba.</p>
       <p>Las paredes, llenas de exvotos y fotografías, cuentan mil historias de enfermos, de madres, de caminantes. La princesa que bajaba a las mazmorras sigue bajando hoy a las heridas de quien se acerca.</p>
@@ -476,6 +483,7 @@
   <!-- FINAL -->
   <section class="final" id="final" data-cam="end">
     <div class="final__inner">
+      <figure class="acuarela acuarela--etapa acuarela--final reveal"><img src="img/etapas/etapa-12.jpg" data-base="img/etapas/etapa-12" width="1600" height="893" alt="Acuarela: unas manos ofrecen un pan envuelto en un paño blanco, con rosas" loading="lazy" decoding="async" onerror="acuarelaFalta(this)"></figure>
       <h2 class="final__title reveal">Pan para los cautivos, y rosas</h2>
       <p class="reveal">El camino de Casilda empezó bajando a las mazmorras y terminó en una peña, delante de Dios. Entre medias hubo una herida, un viaje, un bautismo y un agua que cura. Es el camino de todo cristiano.</p>
       <p class="reveal">No somos turistas, somos peregrinos que aprenden a amar. Desde Carabanchel subimos a Briviesca y al santuario para encontrarnos con ella y con la comunidad que la guarda. Pero el camino de las rosas empieza en casa: en las mazmorras de nuestro barrio, donde alguien espera un pan que nadie le lleva.</p>

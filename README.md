@@ -54,7 +54,7 @@ Opciones (desde una consola en la carpeta del proyecto):
 Los textos que se leen están en `audio/narracion.json` (se generan desde los datos de la web: nombre de la etapa, título, texto, la Palabra de Dios y la pregunta para la oración). Usa las voces neuronales gratuitas de Microsoft Edge: no necesita clave, pero sí internet.
 
 ## Acuarelas de las etapas
-Los prompts están en `img/etapas/PROMPTS.md`. Guarda cada imagen como `img/etapas/etapa-1.jpg` … `etapa-11.jpg` (16:9, unos 1600 × 900 px). La web la muestra al principio del panel de su etapa, con un zoom lento; si falta, la etapa se ve sin imagen.
+Los prompts están en `img/etapas/PROMPTS.md`. Guarda cada imagen como `img/etapas/etapa-1.jpg` … `etapa-11.jpg` (vale también .png, .jpeg o .webp; 16:9, unos 1600 × 900 px). La web la muestra al principio del panel de su etapa, con un zoom lento; si falta, la etapa se ve sin imagen.
 
 ## Revisión con Hallmark
 Aplicados los arreglos de la auditoría: títulos sin cursiva, un único antetítulo (el de la peregrinación), etiquetas en caja normal, titular sin palabra coloreada, botones en una sola línea, todos los colores del CSS como tokens con nombre en OKLCH (`--papel`, `--tinta`, `--terracota`, `--oro-viejo`…) y `overflow-x: clip`. Los colores de la escena 3D siguen en `js/main.js` porque son materiales de Three.js, no estilos.

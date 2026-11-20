@@ -344,6 +344,7 @@ html,body{overflow-x:clip}
 .etapa__head--sticky .etapa__hint{top:calc(var(--top-h) + var(--space-4) + var(--step-rn)*.85 + 4.4rem)}
 /* acuarelas de cada etapa (img/etapas/etapa-N.jpg) */
 .acuarela--etapa{margin:0 0 var(--space-3);overflow:hidden;border-radius:2px}
-.acuarela--etapa img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transform:scale(1.06);transition:transform 9s linear}
+.acuarela--etapa img{display:block;width:100%;height:auto;aspect-ratio:1600/893;object-fit:cover;transform:scale(1.06);transition:transform 9s linear}
 .panel.is-visto .acuarela--etapa img{transform:scale(1)}
 @media (prefers-reduced-motion:reduce){.acuarela--etapa img{transform:none;transition:none}}
+.acuarela--final{max-width:34rem;margin:0 auto var(--space-4)}
